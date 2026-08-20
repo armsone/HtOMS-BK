@@ -1,0 +1,6 @@
+reference_id,path,dimensions,sha256,role
+overview_original,/Users/armsone/Library/Containers/cc.ffitch.shottr/Data/tmp/cc.ffitch.shottr/SCR-20260820-ohel.png,800x1076,8ce8e4e27a35b6d4ecef99f2a28dfceee55e53bfc53dfbf21ac3552d3c5f3a44,기존 OMS 요약 화면
+day_original,/Users/armsone/Library/Containers/cc.ffitch.shottr/Data/tmp/cc.ffitch.shottr/SCR-20260820-ohgh.png,792x348,0333e73d133695832aa6b1be45b14d612eb425444300e2bbf97e2417ed84a9a1,기존 OMS 시간대 그래프
+month_original,/Users/armsone/Library/Containers/cc.ffitch.shottr/Data/tmp/cc.ffitch.shottr/SCR-20260820-ohil.png,814x352,0c3d5d263f528932f80d412172ac6f4e95069f02b9e2efa4527a18e3debb458a,기존 OMS 월간 그래프
+delivery_original,/Users/armsone/Library/Containers/cc.ffitch.shottr/Data/tmp/cc.ffitch.shottr/SCR-20260820-ohju.png,782x370,652bdce7cc61fa700e219b62fd354af1c77db9c8a444241dd8af5fb59b22907e,기존 OMS 택배 집계
+widget_small_original,/var/folders/rv/0t_xs0tj4s3843vr2v_djbm40000gn/T/codex-clipboard-15884e2e-eb49-4051-a4e3-bee201e99a3c.png,672x770,991711584518ac907d1d9b7cacd2b41fb09a6ad4309e62be142f71a92bd1fe37,소형 위젯 전체 정보 배치

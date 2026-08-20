@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB00000000000000000001 /* HtOMSBriefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000001 /* HtOMSBriefApp.swift */; };
+		FB00000000000000000002 /* BriefModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000002 /* BriefModels.swift */; };
+		FB00000000000000000003 /* BriefProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000003 /* BriefProviding.swift */; };
+		FB00000000000000000004 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000004 /* Theme.swift */; };
+		FB00000000000000000005 /* BriefRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000005 /* BriefRootView.swift */; };
+		FB00000000000000000006 /* OverviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000006 /* OverviewPage.swift */; };
+		FB00000000000000000007 /* DayTrendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000007 /* DayTrendPage.swift */; };
+		FB00000000000000000008 /* MonthTrendPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000008 /* MonthTrendPage.swift */; };
+		FB00000000000000000009 /* DeliveryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000009 /* DeliveryPage.swift */; };
+		FB0000000000000000000A /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000A /* Components.swift */; };
+		FB0000000000000000000B /* SampleBriefProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000B /* SampleBriefProviderTests.swift */; };
+		FB0000000000000000000C /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000C /* SecureStore.swift */; };
+		FB0000000000000000000D /* AuthSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000D /* AuthSession.swift */; };
+		FB0000000000000000000E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000E /* LoginView.swift */; };
+		FB0000000000000000000F /* SessionControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0000000000000000000F /* SessionControllerTests.swift */; };
+		FB00000000000000000010 /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000010 /* BrandPalette.swift */; };
+		FB00000000000000000011 /* DashboardWidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000011 /* DashboardWidgetSnapshot.swift */; };
+		FB00000000000000000012 /* WidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000012 /* WidgetSnapshotStore.swift */; };
+		FB00000000000000000013 /* BrandPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000010 /* BrandPalette.swift */; };
+		FB00000000000000000014 /* DashboardWidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000011 /* DashboardWidgetSnapshot.swift */; };
+		FB00000000000000000015 /* WidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000012 /* WidgetSnapshotStore.swift */; };
+		FB00000000000000000016 /* HtOMSWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000013 /* HtOMSWidgetBundle.swift */; };
+		FB00000000000000000017 /* SalesBoardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000014 /* SalesBoardWidget.swift */; };
+		FB00000000000000000018 /* HtOMSWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FA00000000000000000022 /* HtOMSWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB00000000000000000019 /* WidgetSnapshotStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000018 /* WidgetSnapshotStoreTests.swift */; };
+		FB0000000000000000001A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000019 /* Assets.xcassets */; };
+		FB0000000000000000001B /* OMSAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000023 /* OMSAPI.swift */; };
+		FB0000000000000000001C /* OMSAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA00000000000000000024 /* OMSAPITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED00000000000000000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA000000000000000000FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD00000000000000000001;
+			remoteInfo = HtOMSBrief;
+		};
+		ED00000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA000000000000000000FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD00000000000000000003;
+			remoteInfo = HtOMSWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD00000000000000000009 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB00000000000000000018 /* HtOMSWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FA00000000000000000001 /* HtOMSBriefApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtOMSBriefApp.swift; sourceTree = "<group>"; };
+		FA00000000000000000002 /* BriefModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefModels.swift; sourceTree = "<group>"; };
+		FA00000000000000000003 /* BriefProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefProviding.swift; sourceTree = "<group>"; };
+		FA00000000000000000004 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FA00000000000000000005 /* BriefRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefRootView.swift; sourceTree = "<group>"; };
+		FA00000000000000000006 /* OverviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewPage.swift; sourceTree = "<group>"; };
+		FA00000000000000000007 /* DayTrendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTrendPage.swift; sourceTree = "<group>"; };
+		FA00000000000000000008 /* MonthTrendPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTrendPage.swift; sourceTree = "<group>"; };
+		FA00000000000000000009 /* DeliveryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPage.swift; sourceTree = "<group>"; };
+		FA0000000000000000000A /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		FA0000000000000000000B /* SampleBriefProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBriefProviderTests.swift; sourceTree = "<group>"; };
+		FA0000000000000000000C /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
+		FA0000000000000000000D /* AuthSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSession.swift; sourceTree = "<group>"; };
+		FA0000000000000000000E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		FA0000000000000000000F /* SessionControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionControllerTests.swift; sourceTree = "<group>"; };
+		FA00000000000000000010 /* BrandPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandPalette.swift; sourceTree = "<group>"; };
+		FA00000000000000000011 /* DashboardWidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWidgetSnapshot.swift; sourceTree = "<group>"; };
+		FA00000000000000000012 /* WidgetSnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshotStore.swift; sourceTree = "<group>"; };
+		FA00000000000000000013 /* HtOMSWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtOMSWidgetBundle.swift; sourceTree = "<group>"; };
+		FA00000000000000000014 /* SalesBoardWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesBoardWidget.swift; sourceTree = "<group>"; };
+		FA00000000000000000015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA00000000000000000016 /* HtOMSBrief.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HtOMSBrief.entitlements; sourceTree = "<group>"; };
+		FA00000000000000000017 /* HtOMSWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HtOMSWidget.entitlements; sourceTree = "<group>"; };
+		FA00000000000000000018 /* WidgetSnapshotStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshotStoreTests.swift; sourceTree = "<group>"; };
+		FA00000000000000000019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA00000000000000000020 /* HtOMSBrief.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HtOMSBrief.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA00000000000000000021 /* HtOMSBriefTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HtOMSBriefTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA00000000000000000022 /* HtOMSWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HtOMSWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA00000000000000000023 /* OMSAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMSAPI.swift; sourceTree = "<group>"; };
+		FA00000000000000000024 /* OMSAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMSAPITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD00000000000000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD00000000000000000004 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD00000000000000000007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC000000000000000000A1 = {
+			isa = PBXGroup;
+			children = (
+				AC000000000000000000A3 /* HtOMSBrief */,
+				AC000000000000000000A6 /* HtOMSWidget */,
+				AC000000000000000000A4 /* HtOMSBriefTests */,
+				AC000000000000000000A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC000000000000000000A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA00000000000000000020 /* HtOMSBrief.app */,
+				FA00000000000000000021 /* HtOMSBriefTests.xctest */,
+				FA00000000000000000022 /* HtOMSWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC000000000000000000A3 /* HtOMSBrief */ = {
+			isa = PBXGroup;
+			children = (
+				FA00000000000000000001 /* HtOMSBriefApp.swift */,
+				FA00000000000000000019 /* Assets.xcassets */,
+				AC000000000000000000A5 /* Shared */,
+				FA00000000000000000002 /* BriefModels.swift */,
+				FA00000000000000000003 /* BriefProviding.swift */,
+				FA0000000000000000000C /* SecureStore.swift */,
+				FA0000000000000000000D /* AuthSession.swift */,
+				FA0000000000000000000E /* LoginView.swift */,
+				FA00000000000000000023 /* OMSAPI.swift */,
+				FA00000000000000000004 /* Theme.swift */,
+				FA0000000000000000000A /* Components.swift */,
+				FA00000000000000000005 /* BriefRootView.swift */,
+				FA00000000000000000006 /* OverviewPage.swift */,
+				FA00000000000000000007 /* DayTrendPage.swift */,
+				FA00000000000000000008 /* MonthTrendPage.swift */,
+				FA00000000000000000009 /* DeliveryPage.swift */,
+				FA00000000000000000016 /* HtOMSBrief.entitlements */,
+			);
+			path = HtOMSBrief;
+			sourceTree = "<group>";
+		};
+		AC000000000000000000A4 /* HtOMSBriefTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA0000000000000000000B /* SampleBriefProviderTests.swift */,
+				FA0000000000000000000F /* SessionControllerTests.swift */,
+				FA00000000000000000018 /* WidgetSnapshotStoreTests.swift */,
+				FA00000000000000000024 /* OMSAPITests.swift */,
+			);
+			path = HtOMSBriefTests;
+			sourceTree = "<group>";
+		};
+		AC000000000000000000A5 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA00000000000000000010 /* BrandPalette.swift */,
+				FA00000000000000000011 /* DashboardWidgetSnapshot.swift */,
+				FA00000000000000000012 /* WidgetSnapshotStore.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AC000000000000000000A6 /* HtOMSWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FA00000000000000000013 /* HtOMSWidgetBundle.swift */,
+				FA00000000000000000014 /* SalesBoardWidget.swift */,
+				FA00000000000000000015 /* Info.plist */,
+				FA00000000000000000017 /* HtOMSWidget.entitlements */,
+			);
+			path = HtOMSWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD00000000000000000001 /* HtOMSBrief */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC00000000000000000002 /* Build configuration list for PBXNativeTarget "HtOMSBrief" */;
+			buildPhases = (
+				DD00000000000000000001 /* Sources */,
+				DD00000000000000000003 /* Frameworks */,
+				DD00000000000000000005 /* Resources */,
+				DD00000000000000000009 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED00000000000000000004 /* PBXTargetDependency */,
+			);
+			name = HtOMSBrief;
+			productName = HtOMSBrief;
+			productReference = FA00000000000000000020 /* HtOMSBrief.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD00000000000000000002 /* HtOMSBriefTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC00000000000000000003 /* Build configuration list for PBXNativeTarget "HtOMSBriefTests" */;
+			buildPhases = (
+				DD00000000000000000002 /* Sources */,
+				DD00000000000000000004 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED00000000000000000001 /* PBXTargetDependency */,
+			);
+			name = HtOMSBriefTests;
+			productName = HtOMSBriefTests;
+			productReference = FA00000000000000000021 /* HtOMSBriefTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD00000000000000000003 /* HtOMSWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC00000000000000000004 /* Build configuration list for PBXNativeTarget "HtOMSWidget" */;
+			buildPhases = (
+				DD00000000000000000006 /* Sources */,
+				DD00000000000000000007 /* Frameworks */,
+				DD00000000000000000008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HtOMSWidget;
+			productName = HtOMSWidget;
+			productReference = FA00000000000000000022 /* HtOMSWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA000000000000000000FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AD00000000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					AD00000000000000000002 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = AD00000000000000000001;
+					};
+					AD00000000000000000003 = {
+						CreatedOnToolsVersion = 15.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = BC00000000000000000001 /* Build configuration list for PBXProject "HtOMSBrief" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ko;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ko,
+				en,
+				Base,
+			);
+			mainGroup = AC000000000000000000A1;
+			productRefGroup = AC000000000000000000A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD00000000000000000001 /* HtOMSBrief */,
+				AD00000000000000000002 /* HtOMSBriefTests */,
+				AD00000000000000000003 /* HtOMSWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD00000000000000000005 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0000000000000000001A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD00000000000000000008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD00000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB00000000000000000001 /* HtOMSBriefApp.swift in Sources */,
+				FB00000000000000000010 /* BrandPalette.swift in Sources */,
+				FB00000000000000000011 /* DashboardWidgetSnapshot.swift in Sources */,
+				FB00000000000000000012 /* WidgetSnapshotStore.swift in Sources */,
+				FB00000000000000000002 /* BriefModels.swift in Sources */,
+				FB00000000000000000003 /* BriefProviding.swift in Sources */,
+				FB0000000000000000000C /* SecureStore.swift in Sources */,
+				FB0000000000000000000D /* AuthSession.swift in Sources */,
+				FB0000000000000000000E /* LoginView.swift in Sources */,
+				FB00000000000000000004 /* Theme.swift in Sources */,
+				FB0000000000000000000A /* Components.swift in Sources */,
+				FB00000000000000000005 /* BriefRootView.swift in Sources */,
+				FB00000000000000000006 /* OverviewPage.swift in Sources */,
+				FB00000000000000000007 /* DayTrendPage.swift in Sources */,
+				FB00000000000000000008 /* MonthTrendPage.swift in Sources */,
+				FB00000000000000000009 /* DeliveryPage.swift in Sources */,
+				FB0000000000000000001B /* OMSAPI.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD00000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB0000000000000000000B /* SampleBriefProviderTests.swift in Sources */,
+				FB0000000000000000000F /* SessionControllerTests.swift in Sources */,
+				FB00000000000000000019 /* WidgetSnapshotStoreTests.swift in Sources */,
+				FB0000000000000000001C /* OMSAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD00000000000000000006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB00000000000000000013 /* BrandPalette.swift in Sources */,
+				FB00000000000000000014 /* DashboardWidgetSnapshot.swift in Sources */,
+				FB00000000000000000015 /* WidgetSnapshotStore.swift in Sources */,
+				FB00000000000000000016 /* HtOMSWidgetBundle.swift in Sources */,
+				FB00000000000000000017 /* SalesBoardWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED00000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD00000000000000000001 /* HtOMSBrief */;
+			targetProxy = ED00000000000000000002 /* PBXContainerItemProxy */;
+		};
+		ED00000000000000000004 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD00000000000000000003 /* HtOMSWidget */;
+			targetProxy = ED00000000000000000003 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CC00000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CC00000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CC00000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HtOMSBrief/HtOMSBrief.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202608210644;
+				DEVELOPMENT_TEAM = T7B4EPLHPK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htoms.brief;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC00000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HtOMSBrief/HtOMSBrief.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202608210644;
+				DEVELOPMENT_TEAM = T7B4EPLHPK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htoms.brief;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CC00000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202608210644;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htoms.brief.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HtOMSBrief.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HtOMSBrief";
+			};
+			name = Debug;
+		};
+		CC00000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202608210644;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htoms.brief.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HtOMSBrief.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HtOMSBrief";
+			};
+			name = Release;
+		};
+		CC00000000000000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HtOMSWidget/HtOMSWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202608210644;
+				DEVELOPMENT_TEAM = T7B4EPLHPK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HtOMSWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htoms.brief.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CC00000000000000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = HtOMSWidget/HtOMSWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 202608210644;
+				DEVELOPMENT_TEAM = T7B4EPLHPK;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HtOMSWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htoms.brief.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC00000000000000000001 /* Build configuration list for PBXProject "HtOMSBrief" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC00000000000000000001 /* Debug */,
+				CC00000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC00000000000000000002 /* Build configuration list for PBXNativeTarget "HtOMSBrief" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC00000000000000000003 /* Debug */,
+				CC00000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC00000000000000000003 /* Build configuration list for PBXNativeTarget "HtOMSBriefTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC00000000000000000005 /* Debug */,
+				CC00000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC00000000000000000004 /* Build configuration list for PBXNativeTarget "HtOMSWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC00000000000000000007 /* Debug */,
+				CC00000000000000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA000000000000000000FF /* Project object */;
+}
