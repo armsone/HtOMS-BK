@@ -1,0 +1,58 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- Background -->
+    <path
+        android:fillColor="#0E0E0F"
+        android:pathData="M0,0h320v180h-320z" />
+    <!-- Card shape -->
+    <path
+        android:fillColor="#27272A"
+        android:pathData="M16,16h288v148h-288z" />
+    <!-- Orange top accent -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M32,36h48v6h-48z" />
+    <!-- Split flap cells representing HTOMS BRIEF -->
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M32,56h34v48h-34z" />
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M70,56h34v48h-34z" />
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M108,56h34v48h-34z" />
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M146,56h34v48h-34z" />
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M184,56h34v48h-34z" />
+    <!-- Letter H -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M42,66h4v11h10v-11h4v28h-4v-12h-10v12h-4z" />
+    <!-- Letter T -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M76,66h22v5h-9v23h-4v-23h-9z" />
+    <!-- Letter O -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M114,66h22v28h-22z M118,71v18h14v-18z" />
+    <!-- Letter M -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M152,66h5l6,14l6,-14h5v28h-4v-19l-5,12h-4l-5,-12v19h-4z" />
+    <!-- Letter S -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M190,66h22v6h-17v5h17v17h-22v-6h17v-6h-17z" />
+    <!-- Subtitle bar -->
+    <path
+        android:fillColor="#ADADB3"
+        android:pathData="M32,122h140v4h-140z" />
+</vector>

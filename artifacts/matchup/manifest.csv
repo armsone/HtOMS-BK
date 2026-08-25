@@ -1,0 +1,7 @@
+Route/state ID,Platform,Device profile,Capture path,Status
+login_default,android,pending,artifacts/matchup/screenshots/login_default.png,pending capture (runtime 검증 전)
+overview_populated,android,pending,artifacts/matchup/screenshots/overview_populated.png,pending capture (runtime 검증 전)
+day_populated,android,pending,artifacts/matchup/screenshots/day_populated.png,pending capture (runtime 검증 전)
+month_populated,android,pending,artifacts/matchup/screenshots/month_populated.png,pending capture (runtime 검증 전)
+delivery_populated,android,pending,artifacts/matchup/screenshots/delivery_populated.png,pending capture (runtime 검증 전)
+widget_small_all_data,android,pending,artifacts/matchup/screenshots/widget_small_all_data.png,pending capture (runtime 검증 전)

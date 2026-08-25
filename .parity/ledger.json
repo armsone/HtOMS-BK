@@ -1,0 +1,495 @@
+{
+  "ledger_version": 1,
+  "product": "HtOMS Brief",
+  "platform": "android",
+  "contract_source": "../HtOMSBrief/.sync/product-contract.yaml (canonical, Apple repo only)",
+  "updated": "2026-08-25",
+  "rows": [
+    {
+      "id": "cap.auth.01.implementation",
+      "route_state": "cap-auth-01",
+      "element": "Airport Split-Flap Login Screen",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Airport Split-Flap Login Screen",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/LoginScreen.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.auth.02.implementation",
+      "route_state": "cap-auth-02",
+      "element": "Authentication API Client & Session Handshake",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Authentication API Client & Session Handshake",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/api/OMSAPIClient.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.auth.03.implementation",
+      "route_state": "cap-auth-03",
+      "element": "Hardware-Backed Secure Storage & Session Persistence",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Hardware-Backed Secure Storage & Session Persistence",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/security/KeystoreSecureStore.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.auth.04.implementation",
+      "route_state": "cap-auth-04",
+      "element": "Session Lifecycle & Sign-Out Cleanup",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Session Lifecycle & Sign-Out Cleanup",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/MainActivity.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.catalog.01.implementation",
+      "route_state": "cap-catalog-01",
+      "element": "Deterministic UI Catalog & Test Injection Harness",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Deterministic UI Catalog & Test Injection Harness",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/MainActivity.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.core.01.implementation",
+      "route_state": "cap-core-01",
+      "element": "Unified Single-Page Vertical Brief Architecture",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Unified Single-Page Vertical Brief Architecture",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/BriefRootScreen.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.sync.01.implementation",
+      "route_state": "cap-sync-01",
+      "element": "Periodic Auto-Refresh Loop & Countdown Timer",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Periodic Auto-Refresh Loop & Countdown Timer",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/BriefViewModel.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.sync.02.implementation",
+      "route_state": "cap-sync-02",
+      "element": "Resilient Multi-Stream Fetching & Graceful Degradation",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Resilient Multi-Stream Fetching & Graceful Degradation",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/api/RemoteBriefProvider.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.api.01.implementation",
+      "route_state": "cap-api-01",
+      "element": "OMS Core REST API Client Contract",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "OMS Core REST API Client Contract",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/api/OMSAPIClient.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.api.02.implementation",
+      "route_state": "cap-api-02",
+      "element": "Firestore Delivery Status Aggregation Contract",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Firestore Delivery Status Aggregation Contract",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/api/DeliveryAggregateClient.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.data.01.implementation",
+      "route_state": "cap-data-01",
+      "element": "Revenue Computation & Performance Grading Algorithms",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Revenue Computation & Performance Grading Algorithms",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/api/RemoteBriefProvider.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.data.02.implementation",
+      "route_state": "cap-data-02",
+      "element": "Server Status & Heartbeat Liveness Monitoring",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Server Status & Heartbeat Liveness Monitoring",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/api/RemoteBriefProvider.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.page.01.implementation",
+      "route_state": "cap-page-01",
+      "element": "Overview Dashboard Section",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Overview Dashboard Section",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/OverviewPage.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.page.02.implementation",
+      "route_state": "cap-page-02",
+      "element": "Day Trend Hourly Comparison Chart",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Day Trend Hourly Comparison Chart",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/DayTrendPage.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.page.03.implementation",
+      "route_state": "cap-page-03",
+      "element": "Month Trend Daily Sales Chart",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Month Trend Daily Sales Chart",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/MonthTrendPage.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.page.04.implementation",
+      "route_state": "cap-page-04",
+      "element": "Delivery Logistics Status Aggregation Page",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Delivery Logistics Status Aggregation Page",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/ui/DeliveryPage.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.widget.01.implementation",
+      "route_state": "cap-widget-01",
+      "element": "Widget Snapshot Data Transfer Bridge",
+      "dimension": "observable product behavior parity",
+      "classification": "functional",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Widget Snapshot Data Transfer Bridge",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/widget/WidgetSnapshotStore.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    },
+    {
+      "id": "cap.widget.02.implementation",
+      "route_state": "cap-widget-02",
+      "element": "Multi-Size Executive Dashboard Home Screen Widget",
+      "dimension": "rendered design and interaction parity",
+      "classification": "visual",
+      "source_ref": {
+        "kind": "spec",
+        "value": "Multi-Size Executive Dashboard Home Screen Widget",
+        "location": "../HtOMSBrief/.sync/product-contract.yaml"
+      },
+      "target_observation": "Android source implemented; Gradle unit tests, debug build, and lint passed; paired runtime capture pending",
+      "implementation_ref": "app/src/main/java/com/htoms/brief/widget/SalesBoardWidget.kt",
+      "fixture": "htomsbrief-sample-2026-08-20",
+      "fallback_capable": false,
+      "evidence": [],
+      "status": "implemented_source_only",
+      "attempts": [
+        {
+          "attempt": 1,
+          "date": "2026-08-25",
+          "action": "Implemented Android counterpart from the canonical Apple product contract",
+          "result": "Source implemented and static/build verification passed; paired post-change runtime evidence remains open"
+        }
+      ],
+      "reopen_history": []
+    }
+  ]
+}

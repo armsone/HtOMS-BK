@@ -1,0 +1,7 @@
+<resources>
+    <color name="brand_background">#0E0E0F</color>
+    <color name="brand_card">#27272A</color>
+    <color name="brand_board_cell">#18181B</color>
+    <color name="brand_orange">#F26436</color>
+    <color name="brand_muted_text">#ADADB3</color>
+</resources>

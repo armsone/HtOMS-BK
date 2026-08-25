@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Brand Orange Accent Bar -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M28,32h52v8h-52z" />
+    <!-- Split Flap Cells -->
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M28,46h24v30h-24z" />
+    <path
+        android:fillColor="#18181B"
+        android:pathData="M56,46h24v30h-24z" />
+    <!-- Letter H -->
+    <path
+        android:fillColor="#F26436"
+        android:pathData="M34,52h4v7h8v-7h4v18h-4v-7h-8v7h-4z" />
+    <!-- Letter T -->
+    <path
+        android:fillColor="#ADADB3"
+        android:pathData="M60,52h16v4h-6v14h-4v-14h-6z" />
+</vector>

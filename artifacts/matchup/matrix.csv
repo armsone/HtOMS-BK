@@ -1,0 +1,12 @@
+Route/state ID,Element/anatomy,Dimension/action,Fixture/profile,iOS exact reference,Android observed,Difference,Required action,Evidence/confidence,Status/exception proof
+login_default,화면 배경과 인증 카드,Visual,"샘플 없음; ko_KR; dark; portrait",검정 배경·그래파이트 카드·오렌지 인증 상태,소스 구현 완료·런타임 캡처 없음,미측정,에뮬레이터 캡처 후 쌍 비교,Medium: Android 소스만,implemented_source_only; 캡처 필요
+login_default,이메일·비밀번호·로그인,Functional,"UnconnectedAuthService; Keystore 문구",로그인 입력 2개와 비밀번호 표시 버튼,LoginScreen.kt + Compose 계측 테스트,Keychain→Keystore 문구(계약 명시 적응),없음,Medium: 소스+계측 테스트(실행 전),implemented_source_only
+overview_populated,오늘 매출 KPI,Content/state,"SampleBriefProvider 고정값",오늘 매출이 최우선 정보로 표시,OverviewPage.kt TodaySalesCard,미측정,캡처 후 비교,Medium: 소스+fixture 단위 테스트,implemented_source_only
+overview_populated,요약 카드·도넛·서버 상태,Visual,"SampleBriefProvider; dark",공항 안내판 계층과 회색·오렌지 강조,Canvas 도넛·AdaptiveGrid 구현,SwiftUI Charts 도넛 대비 렌더 세부 차이 가능,캡처 후 비교,Low: 시각 미검증,open (visual)
+day_populated,시간축·계열 분리,Visual,"08~17시 고정 fixture",숫자형 오름차순 축·2시간 간격·독립 series,DayTrendPage.kt Canvas(도메인 ±1·독립 계열),미측정,캡처 후 비교,Medium: 소스,implemented_source_only
+day_populated,누락 시간 값,Functional,"한 endpoint에만 있는 시간 포함",nil은 0으로 강제하지 않고 선을 끊음,union join + null 유지 + 선 끊김 구현,없음,매퍼 테스트로 검증됨(실행 전),Medium: 소스+단위 테스트,implemented_source_only
+month_populated,일별 선·평균선,Visual,"2026-07-21~2026-08-20 fixture",회색 1.6pt 실선·오렌지 1.15pt 점선[5,4],MonthTrendPage.kt Canvas 동일 스펙,미측정,캡처 후 비교,Medium: 소스,implemented_source_only
+delivery_populated,택배 집계,Content/state,"상태별 합계 fixture",전체 1104건과 상태별 숫자만 표시,DeliveryPage.kt + 집계 전용 GET,없음(송장·주문 식별자 미노출),집계 테스트로 검증됨(실행 전),Medium: 소스+단위 테스트,implemented_source_only
+widget_small_all_data,소형 위젯 8행 구조,Content/state,"DashboardWidgetSnapshot.sample",금일(20)·전일·당월(08)·전월·평균·목표(66)·시간·서버,SalesBoardWidget SmallBoard 동일 8행,미측정,Glance 갤러리 캡처 후 비교,Medium: 소스+포맷 단위 테스트,implemented_source_only
+widget_small_all_data,만원 반올림·달성률,Functional,"원 단위 snapshot → 만원",1067·20353·32060·1079·30748·66%,WidgetFormat.compactWon/achievementRate,없음,WidgetFormatTest로 검증(실행 전),Medium: 소스+단위 테스트,implemented_source_only
+all_app_states,시스템 상태바·내비게이션 바,Forced OS exception,"Android 시스템 UI",OS 소유 픽셀,플랫폼 시스템 UI는 앱이 제어 불가,플랫폼 고유,앱 콘텐츠 비교에서만 마스크,High: 플랫폼 사실,forced OS exception
