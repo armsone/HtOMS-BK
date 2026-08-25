@@ -1,0 +1,906 @@
+contract_version: "1.0.0"
+product_id: "com.htoms.brief"
+product_name: "HtOMS Brief"
+display_name: "HTOMS BRIEF (운영 브리핑 정보 보드)"
+description: "Canonical, platform-neutral product contract defining the features, data schemas, API interactions, algorithms, UI/UX states, security behaviors, and multi-device adaptations for HtOMS Brief across Apple (iOS/iPadOS/macOS) and Android (Phone/Tablet/Google TV) targets."
+
+reference_inventory:
+  apple_reference:
+    bundle_id: "com.htoms.brief"
+    widget_bundle_id: "com.htoms.brief.widget"
+    test_bundle_id: "com.htoms.brief.tests"
+    app_group: "group.com.htoms.brief"
+    deployment_target: "iOS 17.0"
+    targeted_device_family:
+      - "1 (iPhone)"
+      - "2 (iPad / Mac Designed for iPad)"
+    marketing_version: "2.0.0"
+    build_version: "202608230737"
+    source_files:
+      app_entry: "HtOMSBrief/HtOMSBriefApp.swift"
+      auth_and_session: "HtOMSBrief/AuthSession.swift"
+      models: "HtOMSBrief/BriefModels.swift"
+      brief_provider_protocol: "HtOMSBrief/BriefProviding.swift"
+      root_container_view: "HtOMSBrief/BriefRootView.swift"
+      components: "HtOMSBrief/Components.swift"
+      overview_page: "HtOMSBrief/OverviewPage.swift"
+      day_trend_page: "HtOMSBrief/DayTrendPage.swift"
+      month_trend_page: "HtOMSBrief/MonthTrendPage.swift"
+      delivery_page: "HtOMSBrief/DeliveryPage.swift"
+      login_view: "HtOMSBrief/LoginView.swift"
+      api_client_and_mapper: "HtOMSBrief/OMSAPI.swift"
+      secure_store: "HtOMSBrief/SecureStore.swift"
+      theme_and_formatter: "HtOMSBrief/Theme.swift"
+      shared_palette: "HtOMSBrief/Shared/BrandPalette.swift"
+      widget_snapshot_model: "HtOMSBrief/Shared/DashboardWidgetSnapshot.swift"
+      widget_snapshot_store: "HtOMSBrief/Shared/WidgetSnapshotStore.swift"
+      app_entitlements: "HtOMSBrief/HtOMSBrief.entitlements"
+      widget_bundle: "HtOMSWidget/HtOMSWidgetBundle.swift"
+      widget_view: "HtOMSWidget/SalesBoardWidget.swift"
+      widget_info_plist: "HtOMSWidget/Info.plist"
+      widget_entitlements: "HtOMSWidget/HtOMSWidget.entitlements"
+      tests_api: "HtOMSBriefTests/OMSAPITests.swift"
+      tests_sample: "HtOMSBriefTests/SampleBriefProviderTests.swift"
+      tests_session: "HtOMSBriefTests/SessionControllerTests.swift"
+      tests_widget: "HtOMSBriefTests/WidgetSnapshotStoreTests.swift"
+  reference_manifests:
+    matrix: "artifacts/matchup/matrix.csv"
+    manifest: "artifacts/matchup/manifest.csv"
+    reference_manifest: "artifacts/matchup/reference-manifest.csv"
+    report: "artifacts/matchup/MATCHUP_REPORT.md"
+    capture_script: "scripts/capture_ui_catalog.sh"
+
+design_system:
+  color_palette:
+    background:
+      hex: "#0E0E0F"
+      srgb: { red: 0.055, green: 0.055, blue: 0.060, alpha: 1.0 }
+      usage: "App, widget, and card container root dark background"
+    card:
+      hex: "#27272A"
+      srgb: { red: 0.155, green: 0.155, blue: 0.165, alpha: 1.0 }
+      usage: "Brief card container background surface"
+    card_stroke:
+      rgba: "rgba(255, 255, 255, 0.12)"
+      usage: "Border stroke for cards, input containers, and status boards"
+    board_cell:
+      hex: "#18181B"
+      srgb: { red: 0.095, green: 0.095, blue: 0.105, alpha: 1.0 }
+      usage: "Split-flap character cells, metric rows, table cells, header bar"
+    brand_orange:
+      hex: "#F26436"
+      srgb: { red: 0.950, green: 0.390, blue: 0.210, alpha: 1.0 }
+      usage: "Primary accent color, board amber, warnings, brand identity, header bars"
+    muted_text:
+      hex: "#ADADB3"
+      srgb: { red: 0.680, green: 0.680, blue: 0.700, alpha: 1.0 }
+      usage: "Subheadings, labels, secondary information, units, footers"
+    positive:
+      hex: "#4DC78C"
+      srgb: { red: 0.300, green: 0.780, blue: 0.550, alpha: 1.0 }
+      usage: "Positive trend indicators, moving delivery status, active states"
+    negative:
+      hex: "#EB6166"
+      srgb: { red: 0.920, green: 0.380, blue: 0.400, alpha: 1.0 }
+      usage: "Error badges, unavailable status, server offline, 0-sales points"
+    series_palette:
+      - hex: "#F26436"
+        role: "Primary Series / Store Channel / Top Category"
+      - hex: "#C7C7CC"
+        role: "Secondary Series / Direct Sales Channel / 2nd Category"
+      - hex: "#F59163"
+        role: "Tertiary Series / Phone Channel / 3rd Category"
+      - hex: "#7A7A80"
+        role: "Quaternary Series / 4th Category"
+      - hex: "#FCB894"
+        role: "Quinary Series / 5th Category"
+      - hex: "#525257"
+        role: "Senary Series / Miscellaneous Category"
+    delivery_status_colors:
+      preparing: "#F26436"
+      accepted: "#F26436"
+      moving: "#4DC78C"
+      departing: "#ADADB3"
+      completed: "rgba(255, 255, 255, 0.72)"
+      invoice_error: "#C73875"
+      undelivered: "#C73875"
+      unavailable: "#EB6166"
+  typography:
+    style_language: "Monospaced font for all numerical readouts, airport departure board typography, system sans-serif for body descriptions"
+    numeric_tabular: true
+    case_styling: "Uppercase for board identifiers, airport code abbreviations, and section subheadings"
+    theme_lock: "Strict dark theme only across all platforms"
+  layout_geometry:
+    max_content_width_dp: 1000
+    card_corner_radius_dp: 12
+    board_cell_corner_radius_dp: 4
+    input_field_corner_radius_dp: 10
+    login_card_max_width_dp: 460
+    section_indicator_bar: { width_dp: 36, height_dp: 3, color: "brand_orange" }
+
+capabilities:
+  - id: "CAP-AUTH-01"
+    name: "Airport Split-Flap Login Screen"
+    category: "Authentication & Onboarding"
+    summary: "Airport departure board themed authentication screen providing company credential entry, system status indicators, and secure token dispatch."
+    reference_sources:
+      - "HtOMSBrief/LoginView.swift"
+      - "HtOMSBrief/Theme.swift"
+      - "HtOMSBrief/Shared/BrandPalette.swift"
+    functional_contract:
+      header:
+        flap_title: "HTOMS BRIEF"
+        character_cells:
+          cell_width_dp: 21
+          cell_height_dp: 34
+          cell_spacing_dp: 3
+          font_size_sp: 21
+          text_color: "brand_orange"
+          background_color: "board_cell"
+          space_behavior: "Transparent background and empty character"
+        subtitle: "운영 브리핑 정보 보드"
+      system_status_board:
+        rows:
+          - code: "AUTH"
+            label: "사내 계정 인증"
+            state: "LOGIN"
+            indicator_color: "brand_orange"
+          - code: "KEY"
+            label: "이 기기 Keychain 보관 (Android: Keystore 보관)"
+            state: "LOCAL"
+            indicator_color: "muted_text"
+        error_row:
+          condition: "Displayed when authentication error occurs"
+          icon: "exclamationmark.triangle.fill / warning icon"
+          text_color: "negative"
+          background: "board_cell"
+      credential_card:
+        title: "로그인"
+        fields:
+          email:
+            placeholder: "이메일"
+            keyboard_type: "emailAddress"
+            autocapitalization: "none"
+            autocorrection: false
+            submit_action: "Focus password field (Next)"
+            accessibility_label: "이메일"
+          password:
+            placeholder: "비밀번호"
+            masking_toggle: true
+            toggle_labels: ["비밀번호 표시", "비밀번호 숨기기"]
+            autocapitalization: "none"
+            autocorrection: false
+            submit_action: "Trigger submit (Go)"
+            accessibility_label: "비밀번호"
+        submit_button:
+          label: "로그인"
+          background: "brand_orange"
+          text_color: "#1A1708"
+          loading_state: "Inline spinner; disable button during submission"
+          accessibility_label: "로그인"
+          accessibility_hint: "사내 OMS 계정으로 로그인합니다"
+        security_notice: "사내 OMS 계정으로 로그인합니다. 인증 토큰은 이 기기의 Keychain(Android: Keystore)에만 저장됩니다."
+    state_contract:
+      initial_state: "Empty username and password, statusMessage = nil, isSubmitting = false, isPasswordRevealed = false"
+      submitting_state: "Disable submit button, show loading spinner, prevent duplicate submissions"
+      success_state: "SessionController establishes session, transitions app root to BriefRootView"
+      failure_state: "Clear password field, render error in status message banner, keep username intact"
+
+  - id: "CAP-AUTH-02"
+    name: "Authentication API Client & Session Handshake"
+    category: "Network & Security"
+    summary: "Single POST endpoint for user authentication returning bearer access token and display identity."
+    reference_sources:
+      - "HtOMSBrief/OMSAPI.swift"
+      - "HtOMSBrief/AuthSession.swift"
+      - "HtOMSBriefTests/OMSAPITests.swift"
+    functional_contract:
+      base_url: "https://htoms.cafe24.com"
+      endpoint: "/api/auth/signin"
+      http_method: "POST"
+      request_headers:
+        Content-Type: "application/json"
+      request_body_schema:
+        email: "String (required, non-empty, trimmed)"
+        password: "String (required, non-empty)"
+      response_schema:
+        access_token: "String (required, non-empty JWT token)"
+        user:
+          username: "String? (optional)"
+          email: "String? (optional)"
+      session_extraction_rules:
+        token: "access_token"
+        username: "user.username ?: user.email ?: email"
+        issued_at: "Client timestamp at response parsing (.now)"
+      error_handling:
+        empty_credentials:
+          condition: "email.isEmpty || password.isEmpty"
+          error_description: "아이디와 비밀번호를 모두 입력해 주세요."
+        unauthorized:
+          http_status: [401, 403]
+          error_description: "로그인이 만료되었거나 계정 정보가 올바르지 않습니다."
+        server_error:
+          http_status: "4xx / 5xx"
+          error_description: "OMS 서버 요청에 실패했습니다. ({statusCode})"
+        malformed_data:
+          condition: "Missing access_token in response body"
+          error_description: "OMS 서버 데이터 형식이 예상과 다릅니다."
+
+  - id: "CAP-AUTH-03"
+    name: "Hardware-Backed Secure Storage & Session Persistence"
+    category: "Security & Storage"
+    summary: "Isolated secure persistence of authentication token and session metadata using platform-native hardware keystore mechanisms."
+    reference_sources:
+      - "HtOMSBrief/SecureStore.swift"
+      - "HtOMSBrief/AuthSession.swift"
+      - "HtOMSBriefTests/SessionControllerTests.swift"
+    functional_contract:
+      storage_key: "auth-session"
+      stored_payload_schema:
+        token: "String"
+        username: "String"
+        issuedAt: "ISO-8601 Date"
+      apple_implementation:
+        service_identifier: "com.htoms.brief"
+        security_class: "kSecClassGenericPassword"
+        accessibility_attribute: "kSecAttrAccessibleWhenUnlockedThisDeviceOnly"
+        account_attribute: "auth-session"
+      android_target_implementation:
+        storage_mechanism: "Android Keystore AES/GCM key plus app-private SharedPreferences ciphertext"
+        encryption_scheme: "AES/GCM/NoPadding with a 256-bit non-exportable AndroidKeyStore key"
+        payload_format: "12-byte GCM IV followed by ciphertext and authentication tag, Base64 encoded"
+        master_key_alias: "htoms-brief-secure-store"
+      lifecycle_behavior:
+        cold_launch_restoration:
+          step_1: "Attempt loading data for storage_key"
+          step_2: "JSON decode into AuthSession"
+          step_3: "Validate !token.isEmpty; if empty or corrupted, purge storage_key and set session = nil"
+          step_4: "If valid, set active session and bypass login screen"
+        session_establishment:
+          step_1: "Validate newSession.token is non-empty"
+          step_2: "Encode AuthSession to JSON bytes"
+          step_3: "Write to secure store atomically"
+          step_4: "Update in-memory state triggering reactive UI transition"
+        session_revocation:
+          step_1: "Delete storage_key from secure store"
+          step_2: "Clear in-memory session reference"
+          step_3: "Delete shared widget snapshot payload"
+          step_4: "Notify widget engine to reload timelines"
+
+  - id: "CAP-AUTH-04"
+    name: "Session Lifecycle & Sign-Out Cleanup"
+    category: "Authentication & Session"
+    summary: "Clean user logout mechanism destroying local tokens, wiping widget data, and restoring the login viewport."
+    reference_sources:
+      - "HtOMSBrief/HtOMSBriefApp.swift"
+      - "HtOMSBrief/BriefRootView.swift"
+      - "HtOMSBrief/Shared/WidgetSnapshotStore.swift"
+    functional_contract:
+      trigger: "Top safe-area header bar Logout button"
+      execution_steps:
+        - "Invoke SessionController.logout() (deletes secure storage item)"
+        - "Invoke WidgetSnapshotStore.remove() (deletes shared widget JSON cache)"
+        - "Notify Widget subsystem to invalidate all timelines and fallback to sample/empty"
+        - "Reactive UI transitions from BriefRootView to LoginView immediately"
+      security_invariants:
+        - "No lingering token data remains in memory or disk after logout"
+        - "Widget must not display private company revenue figures after sign-out"
+
+  - id: "CAP-CATALOG-01"
+    name: "Deterministic UI Catalog & Test Injection Harness"
+    category: "Testing & Quality Assurance"
+    summary: "Built-in deterministic test mode decoupled from live network, allowing visual inspection and automated UI regression testing."
+    reference_sources:
+      - "HtOMSBrief/HtOMSBriefApp.swift"
+      - "HtOMSBrief/BriefProviding.swift"
+      - "HtOMSBrief/AuthSession.swift"
+      - "HtOMSBriefTests/SampleBriefProviderTests.swift"
+      - "scripts/capture_ui_catalog.sh"
+    functional_contract:
+      debug_launch_arguments:
+        - argument: "-ui-catalog-login"
+          behavior: "Renders LoginView wired to UnconnectedAuthService (guaranteed offline rejection without network calls)"
+        - argument: "-ui-catalog-brief"
+          behavior: "Renders BriefRootView wired to SampleBriefProvider (guaranteed static snapshot for 2026-08-20 fixtures)"
+        - argument: "-ui-catalog-page"
+          behavior: "Legacy compatibility flag mapping directly to unified BriefRootView with SampleBriefProvider"
+      deterministic_fixtures:
+        date_anchor: "2026-08-20 (Asia/Seoul timezone)"
+        today_sales: { day: 20, level: "보통", amount: 1067 }
+        channel_shares:
+          - { name: "스토어", count: 4065, percentage: 20 }
+          - { name: "방판", count: 216, percentage: 1 }
+          - { name: "전화", count: 16072, percentage: 79 }
+        monthly_summary:
+          month_label: "8월"
+          month_progress: 66
+          month_total: 20353
+          month_average: 1018
+        level_mix:
+          - { name: "최고", value: 23.0 }
+          - { name: "높음", value: 38.0 }
+          - { name: "보통", value: 23.0 }
+          - { name: "낮음", value: 8.0 }
+          - { name: "위험", value: 8.0 }
+        category_mix:
+          - { name: "일회용식판", value: 30.7 }
+          - { name: "한통식판본체", value: 14.5 }
+          - { name: "한통식판뚜껑", value: 12.6 }
+          - { name: "실링비닐D", value: 7.9 }
+          - { name: "6찬식판본체", value: 7.8 }
+          - { name: "기타", value: 26.5 }
+        server_statuses:
+          - { name: "장항", isOperational: true }
+          - { name: "인천", isOperational: true }
+          - { name: "삼송", isOperational: true }
+          - { name: "초월", isOperational: true }
+        day_trend_points: 10
+        month_trend_points: 31
+        delivery_total: 1104
+        delivery_range: "2026-08-06~2026-08-19(14일)"
+
+  - id: "CAP-CORE-01"
+    name: "Unified Single-Page Vertical Brief Architecture"
+    category: "Navigation & Viewport"
+    summary: "Continuous vertical scrolling container presenting all four executive dashboard sections in a single unified hierarchy."
+    reference_sources:
+      - "HtOMSBrief/BriefRootView.swift"
+      - "HtOMSBrief/Components.swift"
+    functional_contract:
+      section_order:
+        1: "OverviewPage (매출 요약 · BRIEF · 오늘과 월간 판매)"
+        2: "DayTrendPage (시간대별 매출 · DAY · 기존 OMS 비교 기준)"
+        3: "MonthTrendPage (월간 매출 · MONTH · 일별 판매 추이)"
+        4: "DeliveryPage (택배 현황 · DELIVERY · 배송 상태 집계)"
+      layout_constraints:
+        max_content_width_dp: 1000
+        horizontal_padding_dp: 16
+        top_padding_dp: 20
+        bottom_padding_dp: 48
+        section_vertical_spacing_dp: 36
+        background: "BriefTheme.background (#0E0E0F)"
+      header_bar:
+        placement: "Sticky safe-area top inset"
+        background: "BriefTheme.boardCell (#18181B)"
+        bottom_border: "BriefTheme.boardAmber at 0.35 opacity, 1dp height"
+        elements:
+          brand_logo: "HTOMS BRIEF (Monospaced footnote, bold, board_amber)"
+          refresh_button: "Circular clockwise icon / small spinner when isLoading"
+          logout_button: "로그아웃 text button (Footnote, semibold, muted_text)"
+
+  - id: "CAP-SYNC-01"
+    name: "Periodic Auto-Refresh Loop & Countdown Timer"
+    category: "Synchronization & Timing"
+    summary: "10-minute automated background polling cadence with reactive per-second countdown and user-triggered refresh bypass."
+    reference_sources:
+      - "HtOMSBrief/BriefRootView.swift"
+      - "HtOMSBrief/OverviewPage.swift"
+    functional_contract:
+      refresh_interval_seconds: 600
+      timer_mechanism:
+        cadence: "1-second periodic tick (Task.sleep / Coroutine delay(1000))"
+        countdown_calculation: "max(0, Int(ceil(nextRefreshAt.timeIntervalSinceNow)))"
+        display_format: "MM:SS (e.g. 09:48)"
+      trigger_points:
+        - "Initial view mounting (.task / LaunchedEffect)"
+        - "Timer countdown reaches 0 seconds"
+        - "User clicks Next Refresh card on OverviewPage"
+        - "User clicks Header Bar refresh icon"
+      concurrency_guard:
+        isLoading_flag: true
+        debounce_behavior: "Ignore refresh requests while an existing load is active"
+        post_load_reset: "Reset countdown to 600s and calculate nextRefreshAt = now + 600s"
+
+  - id: "CAP-SYNC-02"
+    name: "Resilient Multi-Stream Fetching & Graceful Degradation"
+    category: "Network & Resilience"
+    summary: "Parallel asynchronous aggregation across 10 network endpoints with non-blocking error overlays and unauthorized privilege escalation."
+    reference_sources:
+      - "HtOMSBrief/OMSAPI.swift"
+      - "HtOMSBrief/BriefRootView.swift"
+      - "HtOMSBriefTests/OMSAPITests.swift"
+    functional_contract:
+      parallel_execution:
+        essential_endpoints:
+          - "dailySales (GET /api/data-view/daily-sales-amount/{month})"
+          - "monthChart (GET /api/data-view/sales-chart-data/30)"
+          - "referenceHourly (GET /api/data-view/sales-chart-data/30-per-hour)"
+          - "todayHourly (GET /api/data-view/sales-chart-data/day-per-hour)"
+        non_essential_endpoints:
+          - "salesTargets (GET /api/data-view/sales-target/{year})"
+          - "monthlySales (GET /api/dynamic-crud/v_monthly_sales_amount/all)"
+          - "salesLevels (GET /api/dynamic-crud/calendar_sales_level/all)"
+          - "productSales (GET /api/dynamic-crud/v_sales_status/range)"
+          - "botPings (GET /api/dynamic-crud/hantong_bot_ping/all)"
+          - "deliverySummary (Firestore GET /ViewData?pageSize=100)"
+      failure_resilience_rules:
+        non_essential_failure:
+          rule: "Catch network/decoding errors and substitute empty JSON array/object; continue processing snapshot"
+        unauthorized_failure:
+          rule: "Propagate OMSAPIError.unauthorized immediately to trigger session re-evaluation"
+      ui_error_representation:
+        stale_data_overlay:
+          condition: "snapshot != nil && loadError != nil"
+          placement: "Top banner overlay capsule"
+          icon: "exclamationmark.triangle.fill"
+          text: "갱신 실패 · 이전 데이터 표시 중"
+          color: "negative (#EB6166)"
+        full_screen_error:
+          condition: "snapshot == nil && loadError != nil"
+          view: "ContentUnavailableView with retry button"
+          title: "브리프를 불러오지 못했습니다"
+          description: "{loadError}"
+          action_button: "다시 불러오기"
+
+  - id: "CAP-API-01"
+    name: "OMS Core REST API Client Contract"
+    category: "Network & Data Contract"
+    summary: "Strictly read-only REST client interface communicating with OMS Cafe24 backend services with zero mutation capabilities."
+    reference_sources:
+      - "HtOMSBrief/OMSAPI.swift"
+      - "HtOMSBriefTests/OMSAPITests.swift"
+    functional_contract:
+      base_url: "https://htoms.cafe24.com"
+      security_invariant: "Business endpoints must exclusively execute HTTP GET requests. No PUT/PATCH/DELETE or POST mutations exist."
+      authorization_header: "Bearer {access_token}"
+      accept_header: "application/json"
+      endpoints:
+        - name: "dailySales"
+          path: "/api/data-view/daily-sales-amount/{month}"
+          param_format: "month = yyyy-MM"
+        - name: "monthChart"
+          path: "/api/data-view/sales-chart-data/30"
+        - name: "referenceHourly"
+          path: "/api/data-view/sales-chart-data/30-per-hour"
+        - name: "todayHourly"
+          path: "/api/data-view/sales-chart-data/day-per-hour"
+        - name: "salesTargets"
+          path: "/api/data-view/sales-target/{year}"
+          param_format: "year = yyyy"
+        - name: "monthlySales"
+          path: "/api/dynamic-crud/v_monthly_sales_amount/all"
+        - name: "salesLevels"
+          path: "/api/dynamic-crud/calendar_sales_level/all"
+        - name: "productSales"
+          path: "/api/dynamic-crud/v_sales_status/range"
+          query_parameters:
+            gteKey: "delivery_date"
+            gteValue: "{monthStart: yyyy-MM-dd}"
+            lteKey: "delivery_date"
+            lteValue: "{monthEnd: yyyy-MM-dd}"
+        - name: "botPings"
+          path: "/api/dynamic-crud/hantong_bot_ping/all"
+
+  - id: "CAP-API-02"
+    name: "Firestore Delivery Status Aggregation Contract"
+    category: "Network & Data Contract"
+    summary: "Anonymous aggregate parser consuming Firestore delivery tracker documents to compute macro logistics volumes."
+    reference_sources:
+      - "HtOMSBrief/OMSAPI.swift"
+      - "HtOMSBriefTests/OMSAPITests.swift"
+    functional_contract:
+      url: "https://firestore.googleapis.com/v1/projects/hantondeliverytrack/databases/(default)/documents/ViewData?pageSize=100"
+      http_method: "GET"
+      privacy_invariant: "No customer personal identifiers, recipient addresses, invoice numbers, or individual order records are captured, parsed, or stored."
+      parsing_logic:
+        document_iteration: "Iterate documents[].fields"
+        date_extraction: "Extract date substring from document name path: .../ViewData/{yyyy-MM-dd}"
+        date_range_computation:
+          min_date: "min(documentDates)"
+          max_date: "max(documentDates)"
+          days_span: "daysBetween(min_date, max_date) + 1"
+          formatted_range: "{min_date}~{max_date}({days_span}일)"
+        status_classification:
+          information_received: "DeliveryStatus.preparing (준비)"
+          at_pickup: "DeliveryStatus.accepted (인수)"
+          in_transit: "DeliveryStatus.moving (이동)"
+          out_for_delivery: "DeliveryStatus.departing (출발)"
+          delivered:
+            rule: "If statusText contains '배송불가' -> unavailable; else -> completed (완료)"
+          track_error:
+            rule_1: "If statusText contains '미배달' -> DeliveryStatus.undelivered (미배달)"
+            rule_2: "If statusText contains '배송불가' -> DeliveryStatus.unavailable (배송불가)"
+            default: "DeliveryStatus.invoiceError (송장오류)"
+          fallback_keywords:
+            rule: "If statusText contains any of ['용달신용', '용달착불', '직접수령', '쿠팡'] -> DeliveryStatus.completed"
+
+  - id: "CAP-DATA-01"
+    name: "Revenue Computation & Performance Grading Algorithms"
+    category: "Business Logic & Mathematics"
+    summary: "Mathematical transformation rules for currency normalization, channel breakdown, monthly targets, and grading thresholds."
+    reference_sources:
+      - "HtOMSBrief/OMSAPI.swift"
+      - "HtOMSBrief/Theme.swift"
+      - "HtOMSBriefTests/OMSAPITests.swift"
+    functional_contract:
+      currency_unit_transformation:
+        raw_to_manwon: "Math.round(won_amount / 10000.0) -> Int"
+        compact_formatting:
+          above_1_eok: "value >= 100_000_000 -> String.format('%.0f억' or '%.1f억', value / 100_000_000.0)"
+          above_1_man: "value >= 10_000 -> NumberFormat(value / 10000) + '만'"
+          standard: "NumberFormat(value)"
+      today_sales_calculation:
+        row_matching: "Find row where date == today(yyyy-MM-dd)"
+        channel_won_formula: "is_store + is_onsite + is_normal"
+        channel_shares:
+          store: { name: "스토어", won: "is_store", percent: "round(is_store / total * 100)" }
+          direct: { name: "방판", won: "is_onsite", percent: "round(is_onsite / total * 100)" }
+          phone: { name: "전화", won: "is_normal", percent: "round(is_normal / total * 100)" }
+      monthly_authoritative_sales:
+        source_resolution: "Check v_monthly_sales_amount for year_month == currentMonth; fallback to sum of daily_sales_amount rows"
+        progress_percentage: "targetWon > 0 ? round(authoritativeMonthWon / targetWon * 100) : 0"
+        daily_average_won: "day > 0 ? authoritativeMonthWon / day : chartAverageWon"
+      sales_level_evaluation:
+        source: "calendar_sales_level row thresholds"
+        tier_matching:
+          level_5: "sales >= level5_min -> '최고'"
+          level_4: "sales >= level4_min -> '높음'"
+          level_3: "sales >= level3_min -> '보통'"
+          level_2: "sales >= level2_min -> '낮음'"
+          fallback: "'위험'"
+      product_category_mix:
+        grouping: "Sum price_sum grouped by product_name"
+        sorting: "Descending order by total sum"
+        slicing: "Top 5 distinct products + remainder aggregated into '기타'"
+
+  - id: "CAP-DATA-02"
+    name: "Server Status & Heartbeat Liveness Monitoring"
+    category: "Monitoring & Operations"
+    summary: "Automated liveness detection monitoring 4 bot instances with a strict 10-minute heartbeat timeout."
+    reference_sources:
+      - "HtOMSBrief/OMSAPI.swift"
+      - "HtOMSBriefTests/OMSAPITests.swift"
+    functional_contract:
+      monitored_nodes:
+        - bot_identifier: "HBot-0 : 장항"
+          display_name: "장항"
+        - bot_identifier: "HBot-2 : 인천"
+          display_name: "인천"
+        - bot_identifier: "HBot-1 : 삼송"
+          display_name: "삼송"
+        - bot_identifier: "HBot-3 : 초월"
+          display_name: "초월"
+      heartbeat_threshold_seconds: 600
+      evaluation_rule: "now.timeIntervalSince(last_ping_date) <= 600 -> isOperational: true; else false"
+      date_parsing_formats:
+        - "yyyy-MM-dd HH:mm:ss.SSSSSS"
+        - "yyyy-MM-dd HH:mm:ss.SSS"
+        - "yyyy-MM-dd HH:mm:ss"
+        - "ISO-8601 with T and Z separators"
+      timezone: "Asia/Seoul"
+
+  - id: "CAP-PAGE-01"
+    name: "Overview Dashboard Section"
+    category: "User Interface & Visualization"
+    summary: "Primary high-level performance overview displaying today revenue KPI, refresh card, server statuses, channel proportions, monthly aggregates, and doughnut mix charts."
+    reference_sources:
+      - "HtOMSBrief/OverviewPage.swift"
+      - "HtOMSBrief/Components.swift"
+      - "artifacts/matchup/matrix.csv"
+    functional_contract:
+      section_header:
+        title: "매출 요약"
+        subtitle: "BRIEF · 오늘과 월간 판매"
+      components:
+        today_sales_card:
+          title: "오늘 매출 · TODAY"
+          level_badge:
+            text: "{todaySales.level}"
+            background: "BriefTheme.warning at 0.72 opacity"
+            corner_radius_dp: 10
+          day_label: "{todaySales.day}일"
+          amount_display:
+            value: "{BriefFormat.number(todaySales.amount)}"
+            font: "Monospaced bold 48sp"
+            unit_suffix: "만원"
+          accessibility_label: "오늘 {day}일 매출 {amount}, 등급 {level}"
+        refresh_card:
+          title: "다음 갱신 · REFRESH"
+          content: "{refreshCountdownFormatted}"
+          click_action: "Trigger immediate data refresh"
+          accessibility_hint: "OMS 데이터를 다시 불러옵니다"
+        server_status_card:
+          title: "서버 상태 · SERVER"
+          node_list: ["장항", "인천", "삼송", "초월"]
+          status_colors:
+            operational: "BriefTheme.mutedText"
+            down: "BriefTheme.negative"
+          layout_adaptation: "ViewThatFits: horizontal row when space permits, vertical column otherwise"
+          accessibility_label: "Comma-separated status list (e.g. 장항 정상, 인천 문제)"
+        channel_mix_card:
+          title: "판매 채널"
+          proportional_bar:
+            height_dp: 20
+            corner_radius_dp: 2
+            segments: "Proportional widths mapped to channel percentages using series_palette"
+          legend_labels: "Each channel with 12x12 color square, name, formatted count, and [percentage%]"
+          accessibility_label: "{channelName} {count}, {percentage}퍼센트"
+        metrics_grid:
+          layout: "Adaptive 2-column grid with min width 300dp, spacing 16dp"
+          tiles:
+            - title: "월 누계 · {monthLabel} ({monthProgress}%)"
+              value: "{BriefFormat.number(monthTotal)}"
+            - title: "일 평균 · MONTH AVG"
+              value: "{BriefFormat.number(monthAverage)}"
+            - title: "매출 등급 · LEVEL"
+              doughnut_chart: { unit_name: "Level", portions: "levelMix" }
+            - title: "상품 분류 · CATEGORY"
+              doughnut_chart: { unit_name: "Category", portions: "categoryMix" }
+
+  - id: "CAP-PAGE-02"
+    name: "Day Trend Hourly Comparison Chart"
+    category: "User Interface & Visualization"
+    summary: "Time-series comparison chart visualizing today hourly revenue against the 30-day historical average."
+    reference_sources:
+      - "HtOMSBrief/DayTrendPage.swift"
+      - "artifacts/matchup/matrix.csv"
+    functional_contract:
+      section_header:
+        title: "시간대별 매출"
+        subtitle: "DAY · 기존 OMS 비교 기준"
+      chart_specifications:
+        height_dp: 240
+        x_domain: "Numeric integer range from (firstHour - 1) to (lastHour + 1)"
+        x_axis_marks: "Stride by 2 hours (e.g. 08시, 10시, 12시, 14시, 16시)"
+        y_axis_marks: "Leading position with number formatting"
+        grid_lines: "White at 0.05 / 0.06 opacity"
+      series_rendering:
+        reference_series_30_day:
+          label: "30일 합계"
+          line_stroke: { width_pt: 1.15, dash: [4, 4], color: "rgba(255, 255, 255, 0.66)" }
+          point_mark: { size_pt: 12, color: "rgba(255, 255, 255, 0.72)" }
+          multiplier: "1.0 (raw sum / 10000)"
+        today_series:
+          label: "오늘 ×10"
+          line_stroke: { width_pt: 1.60, dash: [], color: "brand_orange (#F26436)" }
+          point_mark: { size_pt: 16, color: "brand_orange (#F26436)" }
+          multiplier: "10.0 (today sum * 10 / 10000 for visual parity)"
+      missing_data_behavior: "Hours with missing data maintain nil values; do not force 0 and do not bridge uncollected future intervals"
+      legend_header:
+        elements:
+          - { label: "오늘 ×10", color: "brand_orange", dashed: false }
+          - { label: "30일 합계", color: "rgba(255, 255, 255, 0.66)", dashed: true }
+          - { label: "만원 비교값", color: "muted_text", alignment: "trailing" }
+      accessibility_label: "시간대별 매출 비교. 오렌지는 오늘 매출 10배, 회색은 최근 30일 합계. 최신 {label} 오늘 비교값 {result}"
+
+  - id: "CAP-PAGE-03"
+    name: "Month Trend Daily Sales Chart"
+    category: "User Interface & Visualization"
+    summary: "30-day chronological daily sales line chart featuring an average benchmark rule and zero-sales anomaly markers."
+    reference_sources:
+      - "HtOMSBrief/MonthTrendPage.swift"
+      - "artifacts/matchup/matrix.csv"
+    functional_contract:
+      section_header:
+        title: "월간 매출"
+        subtitle: "MONTH · {dateRange: yyyy.MM.dd~yyyy.MM.dd}"
+      chart_specifications:
+        height_dp: 280
+        unit_label: "단위: 만원"
+        average_badge: "평균 {BriefFormat.number(average)}"
+        x_axis_marks: "Stride by 6 days with localized date format (e.g. 7월 21일)"
+        y_axis_marks: "Leading position with number formatting"
+      series_rendering:
+        daily_sales_line:
+          line_stroke: { width_pt: 1.60, dash: [], color: "rgba(255, 255, 255, 0.54)" }
+          point_mark:
+            size_pt: 16
+            color_rule: "point.count > 0 ? rgba(255, 255, 255, 0.62) : BriefTheme.negative (#EB6166)"
+        average_rule_mark:
+          value: "{average}"
+          line_stroke: { width_pt: 1.15, dash: [5, 4], color: "rgba(242, 100, 54, 0.72)" }
+      accessibility_label: "월간 일별 판매 추이, 평균 {average}"
+
+  - id: "CAP-PAGE-04"
+    name: "Delivery Logistics Status Aggregation Page"
+    category: "User Interface & Visualization"
+    summary: "Macro logistics monitor displaying aggregate shipments and an 8-stage delivery status grid."
+    reference_sources:
+      - "HtOMSBrief/DeliveryPage.swift"
+      - "HtOMSBrief/Theme.swift"
+      - "artifacts/matchup/matrix.csv"
+    functional_contract:
+      section_header:
+        title: "택배 현황"
+        subtitle: "{deliverySummary.dateRange}"
+      components:
+        total_delivery_card:
+          title: "전체 배송 · DELIVERY"
+          total_readout:
+            value: "{BriefFormat.number(total)}"
+            font: "Monospaced bold 44sp"
+            unit_suffix: "건"
+          divider: "Horizontal line at 0.35 opacity"
+          status_grid:
+            layout: "Adaptive grid with min column width 145dp, spacing 12dp horizontal, 14dp vertical"
+            statuses:
+              - { status: "준비", color: "brand_orange" }
+              - { status: "인수", color: "brand_orange" }
+              - { status: "이동", color: "positive (#4DC78C)" }
+              - { status: "출발", color: "muted_text (#ADADB3)" }
+              - { status: "완료", color: "rgba(255, 255, 255, 0.72)" }
+              - { status: "송장오류", color: "#C73875" }
+              - { status: "미배달", color: "#C73875" }
+              - { status: "배송불가", color: "negative (#EB6166)" }
+            item_format: "{statusName} [Spacer] {count} 건"
+          accessibility_grouping: "Combine children into distinct semantic status readout items"
+
+  - id: "CAP-WIDGET-01"
+    name: "Widget Snapshot Data Transfer Bridge"
+    category: "Widget & Inter-Process Communication"
+    summary: "Decoupled unidirectional JSON snapshot pipeline transferring sanitized display-only data from main application to home screen widgets."
+    reference_sources:
+      - "HtOMSBrief/Shared/DashboardWidgetSnapshot.swift"
+      - "HtOMSBrief/Shared/WidgetSnapshotStore.swift"
+      - "HtOMSBriefTests/WidgetSnapshotStoreTests.swift"
+    functional_contract:
+      schema_version: 1
+      file_name: "dashboard-widget-snapshot.json"
+      security_invariant: "Snapshot contains no access tokens, user credentials, server passwords, or PII."
+      data_fields:
+        schemaVersion: "Int (must match currentSchemaVersion = 1)"
+        todayAmount: "Int (won)"
+        yesterdayAmount: "Int (won)"
+        monthTotal: "Int (won)"
+        previousMonthTotal: "Int (won)"
+        dailyAverage: "Int (won)"
+        targetAmount: "Int (won)"
+        refreshedAt: "ISO-8601 Date"
+        serverTime: "ISO-8601 Date"
+        isSample: "Bool"
+      apple_storage: "App Group shared container: group.com.htoms.brief"
+      android_target_storage: "App-private file storage / Shared DataStore / Glance StateDefinition"
+      write_trigger: "Executed immediately upon each successful RemoteBriefProvider snapshot creation"
+      invalidation_trigger: "Deleted upon user sign-out"
+
+  - id: "CAP-WIDGET-02"
+    name: "Multi-Size Executive Dashboard Home Screen Widget"
+    category: "Widget & Glance"
+    summary: "Compact 8-row airport status board widget presenting comprehensive daily and monthly executive metrics without data clipping."
+    reference_sources:
+      - "HtOMSWidget/SalesBoardWidget.swift"
+      - "HtOMSBrief/Shared/BrandPalette.swift"
+      - "artifacts/matchup/matrix.csv"
+    functional_contract:
+      widget_display_name: "한통 OMS 현황판"
+      widget_description: "오늘과 월간 매출 현황을 공항 안내판처럼 표시합니다."
+      supported_families:
+        - "systemSmall (2x2)"
+        - "systemMedium (4x2)"
+        - "systemLarge (4x4)"
+      small_widget_layout (8-row dense board):
+        row_1: { label: "금일({day})", value: "round(todayAmount / 10000)" }
+        row_2: { label: "전일", value: "round(yesterdayAmount / 10000)" }
+        row_3: { label: "당월({month})", value: "round(monthTotal / 10000)" }
+        row_4: { label: "전월", value: "round(previousMonthTotal / 10000)" }
+        row_5: { label: "평균", value: "round(dailyAverage / 10000)" }
+        row_6: { label: "목표({achievementRate}%)", value: "round(targetAmount / 10000)" }
+        row_7: { label: "시간", value: "format(refreshedAt, 'MM-dd HH:mm')" }
+        row_8: { label: "서버", value: "format(serverTime, 'MM-dd HH:mm')" }
+        typography: "Monospaced bold digits, minimumScaleFactor 0.9, privacySensitive"
+      medium_widget_layout:
+        header: { title: "현황판", subtitle: "매출 · 만원", sample_badge: "SAMPLE if isSample" }
+        left_column: ["금일", "전일"]
+        right_column: ["당월", "목표"]
+        footer: { label: "갱신", timestamp: "refreshedAt" }
+      large_widget_layout:
+        header: { title: "현황판", subtitle: "매출 · 만원" }
+        rows: ["금일", "전일", "당월", "전월", "평균", "목표"]
+        footer: ["갱신 timestamp", "서버 timestamp"]
+      timeline_policy: "15-minute background refresh cadence (.after(now + 15m))"
+
+platform_adaptations:
+  android_phone:
+    architecture:
+      ui_framework: "Jetpack Compose with Material3 dark theme palette matching BrandPalette"
+      navigation: "Single Activity with AppRootView gating LoginScreen vs BriefRootScreen"
+      viewmodel: "SessionViewModel and BriefViewModel powered by Kotlin Coroutines StateFlow"
+      network_layer: "Ktor Client / OkHttp with Json content negotiation"
+      security_layer: "EncryptedSharedPreferences with Android KeyStore MasterKey"
+      widget_layer: "Jetpack Glance AppWidgetProvider with SizeMode.Responsive"
+    ui_adaptation:
+      container: "LazyColumn with responsive GridCells.Adaptive(minSize = 300.dp)"
+      keyboard_handling: "imePadding, KeyboardOptions(imeAction = ImeAction.Next/Go)"
+      charts: "Vico / MPAndroidChart / Custom Canvas Compose Charts strictly replicating stroke weights and point sizes"
+
+  android_tablet:
+    architecture:
+      layout_engine: "Jetpack Compose responsive breakpoints (WindowWidthSizeClass.Expanded)"
+      content_centering: "Modifier.widthIn(max = 1000.dp).align(Alignment.CenterHorizontally)"
+    ui_adaptation:
+      multi_column_scaling: "Adaptive 2-column or 3-column metric grids taking advantage of landscape tablet viewport"
+      chart_aspect_ratio: "Maintain max height constraints (240dp / 280dp) to prevent vertical stretching"
+
+  google_tv:
+    architecture:
+      ui_framework: "Compose for TV (androidx.tv.material3 / androidx.tv.foundation)"
+      input_paradigm: "10-foot D-pad remote control navigation (DPAD_UP, DPAD_DOWN, DPAD_LEFT, DPAD_RIGHT, DPAD_CENTER)"
+      launcher_category: "android.intent.category.LEANBACK_LAUNCHER"
+    ui_adaptation:
+      focus_management:
+        focus_indication: "Custom 2dp brand_orange (#F26436) border glow on focused cards"
+        dpad_traversal: "Explicit FocusRequester tree allowing seamless navigation through Overview, Day Trend, Month Trend, Delivery, and Logout header"
+      typography_scaling: "1.25x typography scaling factor for readability at 10-foot viewing distance"
+      touch_elimination: "Eliminate pull-to-refresh gestures; bind refresh exclusively to D-pad click on REFRESH card or top header button"
+      auto_focus: "Automatically focus on Today Sales card or Refresh button upon screen load"
+
+  os_limitations_and_intentional_differences:
+    - difference_id: "DIFF-SEC-01"
+      subsystem: "Secure Credential Storage"
+      apple_native: "iOS Keychain Services (kSecClassGenericPassword with kSecAttrAccessibleWhenUnlockedThisDeviceOnly)"
+      android_native: "Android Keystore AES/GCM key with app-private encrypted SharedPreferences payload"
+      rationale: "A non-exportable platform keystore key provides hardware-backed isolation where supported without relying on deprecated Jetpack Security APIs."
+    - difference_id: "DIFF-WIDGET-01"
+      subsystem: "Home Screen Widgets"
+      apple_native: "Apple WidgetKit TimelineProvider with App Group file container"
+      android_native: "Jetpack Glance AppWidget with GlanceAppWidgetReceiver and WorkManager periodic updates"
+      rationale: "Glance provides declarative Kotlin UI matching SwiftUI WidgetKit while honoring Android battery optimization and widget sizing policies."
+    - difference_id: "DIFF-TV-01"
+      subsystem: "TV Form Factor Navigation"
+      apple_native: "Designed for iPad running on macOS/iPad with pointer/touch support"
+      android_native: "Google TV / Android TV with Leanback manifest banner and D-pad focus engine"
+      rationale: "TV platforms lack touch screens and require strict directional focus graphs and 10-foot visual hierarchy."
+
+implementation_evidence:
+  android_verification:
+    repository: "/Users/armsone/git/HtOMSBrief-Android"
+    verified_on: "2026-08-25"
+    source_display_build: "202608251115"
+    android_version_code: 340515
+    checks:
+      - "./gradlew :app:testDebugUnitTest :app:assembleDebug"
+      - "./gradlew :app:lintDebug"
+      - "./gradlew :app:assembleReleaseQa"
+      - "aapt2 badging confirmed phone, tablet, and Leanback launcher support"
+      - "apksigner verified the releaseQa APK"
+      - "SM-F968N install, MainActivity launch, and versionCode 340515 confirmed"
+      - "GitHub Release android-v340515 asset and SHA-256 download verified"
+    visual_parity: "Open: phone launch was confirmed, but deterministic paired captures for phone/tablet/Google TV have not yet been collected"
+  matchup_matrix_mapping:
+    login_default:
+      contract_capability: "CAP-AUTH-01"
+      parity_row_id: "login_default"
+      evidence_confidence: "High: iPhone 17 Pro + iPad Pro 11-inch runtime captures, verified Swift source"
+    overview_populated:
+      contract_capability: "CAP-PAGE-01"
+      parity_row_id: "overview_populated"
+      evidence_confidence: "High: Source + 1206x2622 & 1668x2420 runtime captures"
+    day_populated:
+      contract_capability: "CAP-PAGE-02"
+      parity_row_id: "day_populated"
+      evidence_confidence: "High: Source + API test fixtures + independent series separation verification"
+    month_populated:
+      contract_capability: "CAP-PAGE-03"
+      parity_row_id: "month_populated"
+      evidence_confidence: "High: Source + date formatting test + runtime captures"
+    delivery_populated:
+      contract_capability: "CAP-PAGE-04"
+      parity_row_id: "delivery_populated"
+      evidence_confidence: "High: Source + Firestore aggregate test + runtime captures"
+    widget_small_all_data:
+      contract_capability: "CAP-WIDGET-02"
+      parity_row_id: "widget_small_all_data"
+      evidence_confidence: "High: Actual WidgetKit gallery captures + rounding formula verification"
+
+dependencies:
+  network:
+    - name: "OMS Backend REST API"
+      base_url: "https://htoms.cafe24.com"
+      protocol: "HTTPS / JSON"
+    - name: "Google Cloud Firestore Delivery Aggregator"
+      base_url: "https://firestore.googleapis.com"
+      protocol: "HTTPS / REST"
+  platform_libraries_apple:
+    - "SwiftUI"
+    - "Charts"
+    - "WidgetKit"
+    - "Security (Keychain)"
+    - "Combine"
+  recommended_libraries_android:
+    - "androidx.compose.ui:ui"
+    - "androidx.compose.material3:material3"
+    - "androidx.glance:glance-appwidget"
+    - "org.jetbrains.kotlinx:kotlinx-serialization-json"
+    - "org.jetbrains.kotlinx:kotlinx-coroutines-core"
+    - "Android platform HttpURLConnection"
+    - "Android Keystore"
