@@ -12,15 +12,15 @@ android {
         applicationId = "com.htoms.brief"
         minSdk = 26
         targetSdk = 37
-        versionCode = 340515
-        versionName = "2.0.0"
+        versionCode = 340964
+        versionName = "2.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
 
-        buildConfigField("String", "SOURCE_DISPLAY_BUILD", "\"202608251115\"")
+        buildConfigField("String", "SOURCE_DISPLAY_BUILD", "\"202608251843\"")
     }
 
     buildTypes {

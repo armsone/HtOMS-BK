@@ -5,6 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.glance.appwidget.updateAll
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -15,7 +19,9 @@ import com.htoms.brief.auth.SessionController
 import com.htoms.brief.auth.UnconnectedAuthService
 import com.htoms.brief.provider.SampleBriefProvider
 import com.htoms.brief.theme.HtOMSBriefTheme
+import com.htoms.brief.update.AppUpdateManager
 import com.htoms.brief.ui.BriefRootScreen
+import com.htoms.brief.ui.AppUpdatePanel
 import com.htoms.brief.ui.BriefViewModel
 import com.htoms.brief.ui.LoginScreen
 import com.htoms.brief.widget.SalesBoardWidget
@@ -32,7 +38,8 @@ class MainActivity : ComponentActivity() {
             HtOMSBriefTheme {
                 AppRoot(
                     session = app.sessionController,
-                    catalogMode = catalogMode
+                    catalogMode = catalogMode,
+                    updateManager = app.updateManager
                 )
             }
         }
@@ -57,7 +64,8 @@ enum class CatalogMode { LOGIN, BRIEF }
 @Composable
 fun AppRoot(
     session: SessionController,
-    catalogMode: CatalogMode?
+    catalogMode: CatalogMode?,
+    updateManager: AppUpdateManager
 ) {
     when (catalogMode) {
         CatalogMode.LOGIN -> LoginScreen(controller = session, authService = UnconnectedAuthService())
@@ -68,7 +76,12 @@ fun AppRoot(
             )
             BriefRootScreen(viewModel = catalogViewModel, onLogout = {})
         }
-        null -> AuthenticatedContent(session)
+        null -> Column(modifier = Modifier.fillMaxSize()) {
+            AppUpdatePanel(updateManager)
+            Box(modifier = Modifier.weight(1f)) {
+                AuthenticatedContent(session)
+            }
+        }
     }
 }
 

@@ -21,6 +21,8 @@ import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material.icons.filled.WifiOff
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -39,6 +41,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.htoms.brief.theme.BriefTheme
+import com.htoms.brief.update.AppUpdateManager
+import com.htoms.brief.update.UpdatePhase
 
 /** 모든 브리프 섹션을 세로 스크롤 한 페이지로 보여 주는 루트 화면. */
 @Composable
@@ -107,6 +111,87 @@ fun BriefRootScreen(
             }
         }
     }
+}
+
+@Composable
+fun AppUpdatePanel(updateManager: AppUpdateManager) {
+    val state by updateManager.state.collectAsStateWithLifecycle()
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(BriefTheme.boardCell)
+            .padding(horizontal = 16.dp, vertical = 10.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "앱 업데이트",
+                    fontSize = 13.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+                Text(text = state.message, fontSize = 12.sp, color = BriefTheme.mutedText)
+                state.release?.notes?.lineSequence()?.firstOrNull { it.isNotBlank() }?.let { note ->
+                    Text(text = note, fontSize = 11.sp, color = BriefTheme.mutedText)
+                }
+            }
+            Text(text = "자동 다운로드", fontSize = 12.sp, color = BriefTheme.mutedText)
+            Switch(
+                checked = state.automaticallyDownloads,
+                onCheckedChange = updateManager::setAutomaticallyDownloads,
+                modifier = Modifier.testTag("update-auto-download")
+            )
+        }
+
+        if (state.phase == UpdatePhase.DOWNLOADING || state.phase == UpdatePhase.VERIFYING) {
+            val progress = state.progressPercent
+            if (progress == null) {
+                LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
+            } else {
+                LinearProgressIndicator(
+                    progress = { progress / 100f },
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
+
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            if (state.phase != UpdatePhase.DOWNLOADING && state.phase != UpdatePhase.VERIFYING) {
+                UpdateAction("업데이트 확인", "update-check") {
+                    updateManager.checkForUpdates(manual = true)
+                }
+            }
+            when (state.phase) {
+                UpdatePhase.AVAILABLE -> UpdateAction("다운로드", "update-download", updateManager::downloadManually)
+                UpdatePhase.DOWNLOADING -> UpdateAction("취소", "update-cancel", updateManager::cancelDownload)
+                UpdatePhase.READY, UpdatePhase.PERMISSION_REQUIRED ->
+                    UpdateAction("설치", "update-install", updateManager::install)
+                UpdatePhase.ERROR -> UpdateAction("다시 시도", "update-retry", updateManager::retry)
+                else -> Unit
+            }
+        }
+    }
+}
+
+@Composable
+private fun UpdateAction(title: String, testTag: String, action: () -> Unit) {
+    Text(
+        text = title,
+        fontSize = 12.sp,
+        fontWeight = FontWeight.SemiBold,
+        color = BriefTheme.boardAmber,
+        modifier = Modifier
+            .focusBorder(cornerRadius = 8.dp)
+            .clip(androidx.compose.foundation.shape.RoundedCornerShape(8.dp))
+            .clickable(onClick = action)
+            .padding(horizontal = 12.dp, vertical = 8.dp)
+            .testTag(testTag)
+    )
 }
 
 @Composable
