@@ -2,8 +2,8 @@
 
 - 캐노니컬 계약: **Apple 저장소** `HtOMSBrief/.sync/product-contract.yaml` (이 저장소는 계약을 복제하지 않는다)
 - 작성일: 2026-08-25
-- 상태 정의: `implemented_source_only` = Android 소스 작성과 빌드·단위 테스트·린트 검증 완료, 런타임 시각 증거 대기.
-  이 문서의 모든 능력은 **런타임/시각 검증 pending** 상태다.
+- 상태 정의: `implemented_source_only` = Android 소스 작성과 빌드·단위 테스트·린트 검증 완료, 전체 런타임 시각 증거 대기.
+  공개 APK는 SM-F968N 설치·실행까지 확인했지만 태블릿·Google TV와 화면별 매치업 증거가 없어 표의 판정은 유지한다.
 
 | Capability | Apple 소스 근거 | Android 소스 근거 | Android 테스트 근거 | 상태 |
 | --- | --- | --- | --- | --- |
@@ -27,8 +27,8 @@
 | CAP-WIDGET-02 반응형 홈 위젯 | `HtOMSWidget/SalesBoardWidget.swift` | `widget/SalesBoardWidget.kt` (Small 8행/Medium 2열/Large 6행+타임스탬프, SizeMode.Responsive), `widget/WidgetFormat.kt` | `WidgetFormatTest` | implemented_source_only |
 
 ## 명시적 미검증 항목
-- 전 능력의 **런타임 실행·시각 비교**: Android 캡처가 없어 pending. 어떤 항목도 matched 아님.
-- JVM 단위 테스트·디버그 빌드·린트는 통과. Compose 계측 테스트와 실제 화면 캡처는 기기 실행 전이라 미검증.
+- 전 능력의 **화면별 시각 비교**: 결정적 캡처 쌍이 없어 pending. 어떤 항목도 matched 아님.
+- JVM 단위 테스트·공개용 QA 빌드·린트는 통과. SM-F968N 설치·로그인 화면 실행은 확인했고, Compose 계측 테스트와 태블릿·Google TV 실기기 캡처는 미검증.
 
 ## 의도적 차이 요약
 계약 `os_limitations_and_intentional_differences`(DIFF-SEC-01, DIFF-WIDGET-01, DIFF-TV-01)를 따름.

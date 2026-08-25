@@ -1,6 +1,6 @@
 # HtOMS Brief — Android 구현 상태
 
-작성일: 2026-08-25 · 전체 상태: **소스·단위 테스트·공개용 QA 빌드·린트 검증 완료**. 런타임 화면 매치업은 아직 열려 있다.
+작성일: 2026-08-25 · 전체 상태: **Android 2.0.0 공개 완료**. 휴대전화 설치·실행은 확인했고 태블릿·Google TV 런타임 화면 매치업은 아직 열려 있다.
 
 ## 구성 기준선
 | 항목 | 값 |
@@ -39,6 +39,13 @@ cd /Users/armsone/git/HtOMSBrief-Android
 ```
 APK의 서명을 검증했고 `aapt2`로 Leanback 런처 노출, `tv_banner`, 터치스크린 required=false, small~xlarge 화면 지원을 확인했다.
 
+## 공개 결과
+- GitHub 브랜치: `armsone/HtOMS-BK`의 `android` (`ca5a738`)
+- 릴리스: `android-v340515`
+- 자산: `HtOMS-Brief-Android-2.0.0-340515.apk`
+- SHA-256: `c9bbcf513ed4edef9b451f7d9432ad76b9574e31307341312498a2f33dddf1b1`
+- SM-F968N에 데이터 유지 방식으로 설치한 뒤 `com.htoms.brief.MainActivity` 실행과 versionCode 340515를 확인했다.
+
 ## 알려진 미확정 사항 (Codex 확인 필요)
 1. 차트는 SwiftUI Charts 대응 Canvas 직접 구현 — 축 눈금 알고리즘(`ChartSupport.yTicks`)은 Apple의 자동 눈금과 수치가 다를 수 있음(시각 비교로 판정).
 2. Glance `cornerRadius`는 API 31+에서만 적용(하위 버전은 사각 셀).
@@ -47,4 +54,4 @@ APK의 서명을 검증했고 `aapt2`로 Leanback 런처 노출, `tv_banner`, �
 
 ## 산출물 위치
 - 능력별 매핑·상태: `.parity/ledger.json`, `.sync/reports/ANDROID_SYNC_MATRIX.md`
-- 매치업 스캐폴드: `artifacts/matchup/{manifest.csv, matrix.csv, MATCHUP_REPORT.md}` (캡처 전 pending)
+- 매치업 스캐폴드: `artifacts/matchup/{manifest.csv, matrix.csv, MATCHUP_REPORT.md}` (태블릿·Google TV 포함 전체 캡처 pending)
