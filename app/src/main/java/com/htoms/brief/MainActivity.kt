@@ -3,11 +3,14 @@ package com.htoms.brief
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.glance.appwidget.updateAll
@@ -18,6 +21,7 @@ import com.htoms.brief.api.OMSAuthService
 import com.htoms.brief.auth.SessionController
 import com.htoms.brief.auth.UnconnectedAuthService
 import com.htoms.brief.provider.SampleBriefProvider
+import com.htoms.brief.theme.BriefTheme
 import com.htoms.brief.theme.HtOMSBriefTheme
 import com.htoms.brief.update.AppUpdateManager
 import com.htoms.brief.ui.BriefRootScreen
@@ -32,6 +36,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         val app = application as HtOMSBriefApplication
         val catalogMode = if (BuildConfig.DEBUG) resolveCatalogMode() else null
         setContent {
@@ -67,19 +72,26 @@ fun AppRoot(
     catalogMode: CatalogMode?,
     updateManager: AppUpdateManager
 ) {
-    when (catalogMode) {
-        CatalogMode.LOGIN -> LoginScreen(controller = session, authService = UnconnectedAuthService())
-        CatalogMode.BRIEF -> {
-            val catalogViewModel: BriefViewModel = viewModel(
-                key = "ui-catalog-brief",
-                factory = BriefViewModel.factory(SampleBriefProvider()) {}
-            )
-            BriefRootScreen(viewModel = catalogViewModel, onLogout = {})
-        }
-        null -> Column(modifier = Modifier.fillMaxSize()) {
-            AppUpdatePanel(updateManager)
-            Box(modifier = Modifier.weight(1f)) {
-                AuthenticatedContent(session)
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(BriefTheme.background)
+            .safeDrawingPadding()
+    ) {
+        when (catalogMode) {
+            CatalogMode.LOGIN -> LoginScreen(controller = session, authService = UnconnectedAuthService())
+            CatalogMode.BRIEF -> {
+                val catalogViewModel: BriefViewModel = viewModel(
+                    key = "ui-catalog-brief",
+                    factory = BriefViewModel.factory(SampleBriefProvider()) {}
+                )
+                BriefRootScreen(viewModel = catalogViewModel, onLogout = {})
+            }
+            null -> Column(modifier = Modifier.fillMaxSize()) {
+                AppUpdatePanel(updateManager)
+                Box(modifier = Modifier.weight(1f)) {
+                    AuthenticatedContent(session)
+                }
             }
         }
     }

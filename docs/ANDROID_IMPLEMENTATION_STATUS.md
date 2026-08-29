@@ -1,6 +1,6 @@
 # HtOMS Brief — Android 구현 상태
 
-작성일: 2026-08-25 · 전체 상태: **Android 2.1.0 릴리스 후보 검증 완료**. 자동·수동 직접 업데이트를 추가했으며 태블릿·Google TV 런타임 화면 매치업은 아직 열려 있다.
+작성일: 2026-08-29 · 전체 상태: **Android 2.1.1 릴리스 후보 검증 중**. 시스템 바와 화면 콘텐츠가 겹치지 않도록 edge-to-edge 안전 영역을 적용했으며 태블릿·Google TV 런타임 화면 매치업은 아직 열려 있다.
 
 ## 구성 기준선
 | 항목 | 값 |
@@ -8,7 +8,7 @@
 | 표시 이름 | HtOMS Brief |
 | rootProject.name | HtOMSBriefAndroid |
 | namespace / applicationId | com.htoms.brief |
-| versionName | 2.1.0 (소스 표시 빌드 202608251843, versionCode 340964) |
+| versionName | 2.1.1 (소스 표시 빌드 202608291542, versionCode 346542) |
 | minSdk / compile·targetSdk | 26 / 37 |
 | Java / AGP / Kotlin Compose plugin | 17 / 9.3.0 / 2.3.21 |
 | UI | Jetpack Compose 단일 앱 (폰·태블릿·리사이즈 창·Google TV), Material3 다크 전용 |
@@ -39,12 +39,12 @@ cd /Users/armsone/git/HtOMSBrief-Android
 ```
 APK의 서명을 검증했고 `aapt2`로 Leanback 런처 노출, `tv_banner`, 터치스크린 required=false, small~xlarge 화면 지원을 확인했다.
 
-## 2.1.0 릴리스 대상
+## 2.1.1 릴리스 대상
 - 앱 시작 시 업데이트를 확인하고, 화면 위쪽에서 자동 다운로드 설정·수동 확인·다운로드·취소·재시도·설치를 제어한다.
 - GitHub 안정 Release의 semantic 태그 `android-v{versionName}`과 `HtOMS-Brief-Android-{versionName}.apk` 하나만 허용한다.
 - 릴리스 본문의 `Android-Version-Code`·`Build-Number`, GitHub SHA-256, 파일 크기, 패키지·제품 버전·내부 코드와 설치 인증서를 검증한 뒤에만 Android 설치 화면으로 넘긴다.
 - `testDebugUnitTest`, `assembleDebug`, `lintDebug`, `assembleReleaseQa`를 통과했으며 이전 공개 APK와 동일한 인증서 계보를 확인했다.
-- 릴리스 파일명은 `HtOMS-Brief-Android-2.1.0.apk`다.
+- 릴리스 파일명은 `HtOMS-Brief-Android-2.1.1.apk`다.
 
 ## 이전 공개 결과
 - GitHub 브랜치: `armsone/HtOMS-BK`의 `android` (`ca5a738`)
